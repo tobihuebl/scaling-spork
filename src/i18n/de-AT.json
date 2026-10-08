@@ -1,0 +1,31 @@
+{
+  "app": {
+    "tagline": "Eine kleine Aufgabe im echten Leben.",
+    "claim": "Handy weg, erledigen, Beweis hochladen."
+  },
+  "nav": {
+    "today": "Heute",
+    "groups": "Gruppen",
+    "ranking": "Wertung",
+    "profile": "Profil"
+  },
+  "start": {
+    "title": "Willkommen bei {appName}",
+    "explain": "Einmal am Tag kommt eine kleine Aufgabe. Du hast ein Zeitfenster, legst das Handy weg, erledigst sie und lädst einen kurzen Beweis hoch. Dafür gibt es Punkte in deinen Gruppen.",
+    "register": "Registrieren",
+    "login": "Anmelden"
+  },
+  "common": {
+    "loading": "Lädt …",
+    "retry": "Nochmal versuchen",
+    "empty": "Hier ist noch nichts.",
+    "error": "Das hat leider nicht geklappt.",
+    "offline": "Du bist offline. Bitte versuch es mit Netz noch einmal.",
+    "tomorrow": "Bis morgen."
+  },
+  "setup": {
+    "title": "Einrichtung",
+    "supabaseMissing": "Supabase ist noch nicht verbunden. Trag URL und Anon-Key in .env.local ein.",
+    "supabaseOk": "Supabase ist konfiguriert."
+  }
+}

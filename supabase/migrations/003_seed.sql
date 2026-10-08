@@ -1,0 +1,72 @@
+-- 003_seed.sql: Einstellungen, Aufgabenpool, Gemeindeliste.
+-- Alle Werte sind Annahmen für den Pilot und im Admin-Bereich ohne Code-Änderung anpassbar.
+
+insert into public.app_settings (key, value, description) values
+  ('release_window_start',   '"09:00"', 'Beginn des Zeitbands für die zufällige Freigabe (Europe/Vienna)'),
+  ('release_window_end',     '"19:00"', 'Ende des Zeitbands für die zufällige Freigabe (Europe/Vienna)'),
+  ('window_minutes',         '120',     'Zeitfenster für volle Punkte in Minuten'),
+  ('late_factor',            '0.5',     'Anteil der Punkte bei Abgabe nach dem Fenster, aber am selben Tag'),
+  ('base_points',            '10',      'Punkte pro Aufgabe'),
+  ('weekly_streak_min',      '3',       'Abgaben pro Woche für den Wochenbonus'),
+  ('weekly_streak_bonus',    '20',      'Punkte des Wochenbonus'),
+  ('task_cooldown_days',     '60',      'Wartezeit, bevor eine Aufgabe wieder dran sein darf'),
+  ('min_age',                '16',      'Mindestalter (Selbstauskunft)'),
+  ('max_groups_per_user',    '5',       'Gruppen pro Nutzer'),
+  ('max_new_groups_per_day', '3',       'Neue Gruppen pro Nutzer und Tag'),
+  ('max_reports_per_day',    '10',      'Meldungen pro Nutzer und Tag'),
+  ('report_hide_threshold',  '3',       'Meldungen verschiedener Nutzer bis zum automatischen Ausblenden'),
+  ('feed_limit',             '30',      'Höchstzahl Beiträge im Gruppenfeed je Aufgabe'),
+  ('leaderboard_top',        '10',      'Anzahl Plätze in der Gruppenwertung'),
+  ('gemeinde_min_users',     '5',       'Mindestzahl Nutzer, bevor eine Gemeinde im Duell erscheint'),
+  ('terms_version',          '"0.1"',   'Aktuelle Version von AGB und Datenschutz');
+
+-- Platzhalter: echte Pilot-Gemeinden vor dem Start eintragen (offene Entscheidung)
+insert into public.gemeinden (name, bezirk, slug) values
+  ('Amstetten',                  'Amstetten',        'amstetten'),
+  ('Baden',                      'Baden',            'baden'),
+  ('Horn',                       'Horn',             'horn'),
+  ('Klosterneuburg',             'Tulln',            'klosterneuburg'),
+  ('Krems an der Donau',         'Krems (Stadt)',    'krems-an-der-donau'),
+  ('Mödling',                    'Mödling',          'moedling'),
+  ('St. Pölten',                 'St. Pölten (Stadt)', 'st-poelten'),
+  ('Tulln an der Donau',         'Tulln',            'tulln-an-der-donau'),
+  ('Wiener Neustadt',            'Wiener Neustadt (Stadt)', 'wiener-neustadt'),
+  ('Zwettl',                     'Zwettl',           'zwettl');
+
+-- Aufgabenpool (35). Regeln: nie Fremde fotografieren, kein Alkohol, keine Gefährdung,
+-- nie mit dem Bildschirm in der Hand gehen. Vor dem Pilot gemeinsam prüfen.
+insert into public.tasks (title, description, category, proof_type, difficulty) values
+  ('Fotografiere etwas Rundes draußen.', null, 'draussen', 'photo', 1),
+  ('Ruf jemanden an, den du länger nicht gehört hast.', 'Schreib nur, in welcher Beziehung ihr steht.', 'menschen', 'text', 2),
+  ('Geh zehn Minuten ohne Handy spazieren und schreib, was dir aufgefallen ist.', null, 'achtsamkeit', 'text', 1),
+  ('Trink mit jemandem einen Kaffee oder Tee.', 'Fotografiere die Tassen, nicht die Person.', 'menschen', 'photo_text', 1),
+  ('Fotografiere deinen Lieblingsplatz in deiner Gemeinde.', null, 'draussen', 'photo', 1),
+  ('Koch etwas mit einer Zutat, die du noch nie verwendet hast.', null, 'zuhause', 'photo', 2),
+  ('Mach fünf Minuten Dehnübungen.', 'Schreib kurz, was sich danach anders anfühlt.', 'bewegung', 'text', 1),
+  ('Räum einen Platz auf, der dich stört, und zeig das Ergebnis.', null, 'zuhause', 'photo', 2),
+  ('Finde draußen drei Dinge in drei verschiedenen Farben.', null, 'draussen', 'photo', 1),
+  ('Schreib jemandem eine Karte mit der Hand.', 'Fotografiere die Karte, bevor du sie abschickst.', 'kreativ', 'photo', 2),
+  ('Setz dich zehn Minuten ans Fenster oder auf eine Bank und schau einfach nur.', 'Schreib einen Satz dazu, was du gesehen hast.', 'achtsamkeit', 'text', 1),
+  ('Zeichne etwas, das du gerade vor dir siehst.', 'Es muss nicht schön sein.', 'kreativ', 'photo', 1),
+  ('Geh heute einen Weg zu Fuß, den du sonst mit Auto oder Bus fährst.', 'Das Handy bleibt dabei in der Tasche.', 'bewegung', 'text', 2),
+  ('Back etwas und teil es mit jemandem.', null, 'zuhause', 'photo_text', 2),
+  ('Fotografiere ein Blatt oder eine Blume aus der Nähe.', 'Pflück nichts ab.', 'draussen', 'photo', 1),
+  ('Bedank dich bei jemandem persönlich für etwas.', 'Schreib nur, wofür.', 'menschen', 'text', 1),
+  ('Mach zehn Kniebeugen und schreib, wie es sich anfühlt.', null, 'bewegung', 'text', 1),
+  ('Schreib drei Dinge auf, die heute gut waren.', null, 'achtsamkeit', 'text', 1),
+  ('Lies zehn Minuten in einem Buch oder einer Zeitung auf Papier.', 'Zeig, was du liest.', 'achtsamkeit', 'photo_text', 1),
+  ('Fotografiere einen Schatten, der dir gefällt.', null, 'draussen', 'photo', 1),
+  ('Spiel ein Brett- oder Kartenspiel mit jemandem.', 'Fotografiere das Spiel, nicht die Mitspieler.', 'menschen', 'photo_text', 2),
+  ('Bau etwas aus Dingen, die du zuhause findest.', null, 'kreativ', 'photo', 2),
+  ('Geh spazieren und zähl, wie viele Vögel du hörst oder siehst.', null, 'draussen', 'text', 1),
+  ('Räum eine Schublade auf, die du lange nicht angeschaut hast.', null, 'zuhause', 'photo', 1),
+  ('Lern drei Wörter in einer anderen Sprache und schreib sie auf.', null, 'kreativ', 'text', 1),
+  ('Steh fünf Minuten im Garten oder auf dem Balkon und atme ruhig.', 'Schreib, was du gehört hast.', 'achtsamkeit', 'text', 1),
+  ('Frag jemanden aus deiner Familie nach einer Geschichte aus der Jugend.', 'Schreib einen Satz, den du dir gemerkt hast.', 'menschen', 'text', 2),
+  ('Fotografiere ein Gebäude in deiner Gemeinde, das du noch nie genau angeschaut hast.', null, 'draussen', 'photo', 2),
+  ('Iss eine Mahlzeit in Ruhe, ohne Handy am Tisch.', 'Zeig deinen Teller.', 'achtsamkeit', 'photo_text', 1),
+  ('Putz dein Fahrrad oder etwas anderes, das es lange nicht bekommen hat.', null, 'zuhause', 'photo', 2),
+  ('Schreib einer Person, die dir gutgetan hat, eine kurze Nachricht.', 'Schreib nur, an wen du gedacht hast.', 'menschen', 'text', 1),
+  ('Heb draußen drei Stück Müll auf und entsorg sie.', 'Nimm einen Beutel oder Handschuhe. Fotografiere den Beutel.', 'draussen', 'photo_text', 1),
+  ('Fotografiere den Himmel.', null, 'draussen', 'photo', 1),
+  ('Tanz ein Lied lang durch dein Zimmer.', 'Schreib, welches Lied es war.', 'bewegung', 'text', 1);

@@ -1,0 +1,17 @@
+{
+  "name": "APPNAME",
+  "short_name": "APPNAME",
+  "description": "Eine kleine Aufgabe im echten Leben. Handy weg, erledigen, Beweis hochladen.",
+  "lang": "de-AT",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAF7",
+  "theme_color": "#2F6B4F",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
