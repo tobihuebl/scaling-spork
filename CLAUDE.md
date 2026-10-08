@@ -11,7 +11,8 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 - App-Name, Farben, Beschreibung zentral in `app.config.json` (`npm run brand` erzeugt das Manifest).
 
 ## Stand
-- Schritt 1 (Setup): Dateien geschrieben, **noch nicht ausgeführt** (Node fehlt auf dem Rechner).
+- Projekt liegt in `~/Projects/PhoneOff` (nicht mehr in pCloud, wegen `node_modules`).
+- Schritt 1 (Setup): läuft lokal (install, Tests, Typecheck, Build); noch nicht auf Cloudflare deployt.
 - Schritt 2 (Datenbank): `supabase/migrations/001`–`004`, Tests in `supabase/tests/`, **noch nicht gegen eine Datenbank gelaufen**.
 
 ## Bewusste Abweichungen vom Konzept
