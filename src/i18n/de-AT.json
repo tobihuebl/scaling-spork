@@ -21,11 +21,97 @@
     "empty": "Hier ist noch nichts.",
     "error": "Das hat leider nicht geklappt.",
     "offline": "Du bist offline. Bitte versuch es mit Netz noch einmal.",
-    "tomorrow": "Bis morgen."
+    "tomorrow": "Bis morgen.",
+    "back": "Zurück"
   },
   "setup": {
     "title": "Einrichtung",
     "supabaseMissing": "Supabase ist noch nicht verbunden. Trag URL und Anon-Key in .env.local ein.",
     "supabaseOk": "Supabase ist konfiguriert."
+  },
+  "auth": {
+    "email": "E-Mail",
+    "password": "Passwort",
+    "showPassword": "Anzeigen",
+    "hidePassword": "Verbergen",
+    "register": {
+      "title": "Registrieren",
+      "passwordHint": "Mindestens 8 Zeichen.",
+      "username": "Benutzername",
+      "usernameHint": "3 bis 20 Zeichen: a bis z, 0 bis 9, _ und .",
+      "usernameChecking": "Prüfe …",
+      "usernameFree": "Der Name ist frei.",
+      "usernameTaken": "Der Name ist schon vergeben.",
+      "birthYear": "Geburtsjahr",
+      "birthYearHint": "Nur für die Altersprüfung. Niemand sieht es.",
+      "termsPrefix": "Ich akzeptiere die",
+      "termsAnd": "und die",
+      "submit": "Konto erstellen",
+      "haveAccount": "Schon dabei?",
+      "toLogin": "Anmelden"
+    },
+    "checkMail": {
+      "title": "Schau in dein Postfach",
+      "text": "Wir haben dir einen Link an {email} geschickt. Mit einem Klick ist dein Konto bestätigt.",
+      "hint": "Nichts angekommen? Schau im Spam-Ordner nach."
+    },
+    "login": {
+      "title": "Anmelden",
+      "submit": "Anmelden",
+      "forgot": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?",
+      "toRegister": "Registrieren"
+    },
+    "forgot": {
+      "title": "Passwort vergessen",
+      "text": "Gib deine E-Mail ein. Wenn es ein Konto dazu gibt, schicken wir dir einen Link.",
+      "submit": "Link senden",
+      "sent": "Wenn es ein Konto zu dieser E-Mail gibt, ist ein Link unterwegs.",
+      "back": "Zurück zur Anmeldung"
+    },
+    "reset": {
+      "title": "Neues Passwort",
+      "submit": "Passwort speichern",
+      "expired": "Dieser Link ist abgelaufen oder ungültig.",
+      "requestNew": "Neuen Link anfordern"
+    },
+    "callback": {
+      "working": "Einen Moment …",
+      "failed": "Dieser Link ist abgelaufen oder ungültig.",
+      "toLogin": "Zur Anmeldung"
+    },
+    "errors": {
+      "email": "Bitte gib eine gültige E-Mail ein.",
+      "password": "Das Passwort braucht mindestens 8 Zeichen.",
+      "username": "Nur a bis z, 0 bis 9, _ und . sind erlaubt, 3 bis 20 Zeichen.",
+      "birthYear": "Bitte gib ein vierstelliges Geburtsjahr ein.",
+      "tooYoung": "Du musst mindestens {minAge} Jahre alt sein, um {appName} zu nutzen.",
+      "terms": "Bitte akzeptiere AGB und Datenschutzerklärung.",
+      "credentials": "E-Mail oder Passwort stimmt nicht.",
+      "notConfirmed": "Bitte bestätige zuerst deine E-Mail. Den Link haben wir dir geschickt.",
+      "registerFailed": "Das hat nicht geklappt. Vielleicht ist der Benutzername schon vergeben.",
+      "rateLimit": "Gerade zu viele Versuche. Bitte warte kurz."
+    }
+  },
+  "welcome": {
+    "title": "Dein Konto ist bestätigt.",
+    "text": "Schön, dass du dabei bist.",
+    "next": "Weiter"
+  },
+  "today": {
+    "title": "Heute",
+    "none": "Heute noch keine Aufgabe.",
+    "settings": "Einstellungen"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "signedInAs": "Angemeldet als {email}",
+    "logout": "Abmelden"
+  },
+  "legal": {
+    "placeholder": "Dieser Text folgt noch.",
+    "terms": "AGB",
+    "privacy": "Datenschutzerklärung",
+    "imprint": "Impressum"
   }
 }

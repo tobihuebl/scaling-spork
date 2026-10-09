@@ -8,14 +8,21 @@ function leaves(node: unknown, path = ''): [string, string][] {
 }
 
 describe('i18n', () => {
-  it('löst jeden Schlüssel auf und lässt keine Platzhalter offen', () => {
-    for (const [key] of leaves(de)) {
-      expect(t(key)).not.toBe(key);
-      expect(t(key)).not.toMatch(/\{\w+\}/);
+  it('löst jeden Schlüssel auf und ersetzt alle Platzhalter', () => {
+    for (const [key, raw] of leaves(de)) {
+      const names = [...raw.matchAll(/\{(\w+)\}/g)].map((m) => m[1]);
+      const vars = Object.fromEntries(names.map((n) => [n, 'X']));
+      const text = t(key, vars);
+      expect(text).not.toBe(key);
+      expect(text).not.toMatch(/\{\w+\}/);
     }
   });
 
   it('gibt bei unbekanntem Schlüssel den Schlüssel zurück', () => {
     expect(t('gibt.es.nicht')).toBe('gibt.es.nicht');
+  });
+
+  it('setzt den App-Namen automatisch ein', () => {
+    expect(t('start.title')).toContain('APPNAME');
   });
 });

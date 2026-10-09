@@ -1,29 +1,45 @@
-import { t } from '../i18n';
-import { isSupabaseConfigured } from '../lib/supabase';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from '../features/auth/AuthProvider';
+import { AuthCallback } from '../features/auth/AuthCallback';
+import { ForgotPassword } from '../features/auth/ForgotPassword';
+import { Login } from '../features/auth/Login';
+import { Register } from '../features/auth/Register';
+import { ResetPassword } from '../features/auth/ResetPassword';
+import { Legal } from '../features/legal/Legal';
+import { Settings } from '../features/settings/Settings';
+import { Today } from '../features/today/Today';
+import { Welcome } from '../features/today/Welcome';
+import { PublicOnly, RequireAuth } from './guards';
+import { Start } from './Start';
 
-// Platzhalter-Startseite für Schritt 1. Routing und Zugang folgen in Schritt 3.
 export function App() {
   return (
-    <main className="page">
-      <h1>{t('start.title')}</h1>
-      <p className="muted">{t('app.claim')}</p>
-      <section className="card">
-        <p>{t('start.explain')}</p>
-        <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-          <button className="button" type="button" disabled>
-            {t('start.register')}
-          </button>
-          <button className="button button--ghost" type="button" disabled>
-            {t('start.login')}
-          </button>
-        </div>
-      </section>
-      <section className="card">
-        <strong>{t('setup.title')}</strong>
-        <p className="muted" role="status">
-          {isSupabaseConfigured ? t('setup.supabaseOk') : t('setup.supabaseMissing')}
-        </p>
-      </section>
-    </main>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route element={<PublicOnly />}>
+            <Route path="/" element={<Start />} />
+            <Route path="/registrieren" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/passwort-vergessen" element={<ForgotPassword />} />
+          </Route>
+
+          <Route path="/passwort-neu" element={<ResetPassword />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+
+          <Route path="/agb" element={<Legal titleKey="legal.terms" />} />
+          <Route path="/datenschutz" element={<Legal titleKey="legal.privacy" />} />
+          <Route path="/impressum" element={<Legal titleKey="legal.imprint" />} />
+
+          <Route element={<RequireAuth />}>
+            <Route path="/willkommen" element={<Welcome />} />
+            <Route path="/heute" element={<Today />} />
+            <Route path="/einstellungen" element={<Settings />} />
+          </Route>
+
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
