@@ -50,3 +50,12 @@ Vor dem Pilot gebraucht, für die Entwicklung aber nicht blockierend:
 1. **App-Name** und Domain: ändert sich zentral in `app.config.json`.
 2. **Pilot-Gemeinden** und erste Organisationsgruppe: ersetzen die Platzhalter in `003_seed.sql`.
 3. **Aufgabenpool** (35 Stück) gegenlesen.
+
+## Admin-Rolle vergeben
+
+Die Rolle `admin` gibt es nur per SQL (Supabase → SQL Editor). Erst den eigenen Benutzernamen nachsehen, dann eintragen:
+
+```sql
+select u.email, p.username, p.role from auth.users u join public.profiles p on p.id = u.id;
+update public.profiles set role = 'admin' where username = 'DEIN_BENUTZERNAME';
+```

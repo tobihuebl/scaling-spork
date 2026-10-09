@@ -111,7 +111,16 @@
   "today": {
     "title": "Heute",
     "none": "Heute noch keine Aufgabe.",
-    "settings": "Einstellungen"
+    "band": "Sie kommt irgendwann zwischen {from} und {to} Uhr.",
+    "settings": "Einstellungen",
+    "proof": "Beweis: {type}",
+    "remaining": "übrig",
+    "submit": "Jetzt abgeben",
+    "submitSoon": "Die Abgabe kommt als Nächstes.",
+    "late": "Das Zeitfenster ist vorbei. Bis Mitternacht kannst du noch abgeben, mit weniger Punkten.",
+    "done": "Erledigt. Danke!",
+    "over": "Heute ist vorbei. Bis morgen.",
+    "toGroups": "Zu den Gruppen"
   },
   "settings": {
     "title": "Einstellungen",
@@ -223,5 +232,34 @@
   },
   "ranking": {
     "placeholder": "Hier erscheint die Wertung."
+  },
+  "categories": {
+    "draussen": "Draußen",
+    "menschen": "Menschen",
+    "bewegung": "Bewegung",
+    "kreativ": "Kreativ",
+    "achtsamkeit": "Achtsamkeit",
+    "zuhause": "Zuhause"
+  },
+  "proofTypes": {
+    "photo": "Foto",
+    "text": "Text",
+    "photo_text": "Foto und Text",
+    "checkin": "Check-in"
+  },
+  "admin": {
+    "title": "Admin",
+    "today": "Heutige Aufgabe",
+    "noPrompt": "Für heute gibt es noch keine Aufgabe.",
+    "task": "Aufgabe: {title}",
+    "release": "Freigabe um {time} Uhr",
+    "window": "Zeitfenster: {minutes} Minuten",
+    "submissions": "Abgaben: {count}",
+    "trigger": "Aufgabe jetzt auslösen",
+    "triggered": "Die Aufgabe ist jetzt freigegeben.",
+    "reset": "Heutigen Tag zurücksetzen",
+    "resetConfirm": "Neue Aufgabe und neue Uhrzeit für heute wählen?",
+    "resetDone": "Der Tag wurde zurückgesetzt.",
+    "hasSubmissions": "Zurücksetzen geht nicht, es gibt schon Abgaben."
   }
 }

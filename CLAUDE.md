@@ -20,7 +20,9 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 - Schritt 4 (Profil/Onboarding): Code fertig, Migration `006_profile_onboarding.sql` (Spalte `onboarded_at`, Avatar-Constraint) und `supabase/tests/002_profile.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird. Avatar per Kamera-Foto folgt mit der Kamera-Komponente in Schritt 7; Gruppen-Schritt im Onboarding mit Schritt 5, Push-Schritt mit Schritt 9.
 - Schritt 4 live getestet, funktioniert.
 - Schritt 5 (Gruppen): Code fertig (Liste, erstellen, Detail mit Code/QR/Mitgliedern, Admin-Funktionen, Einladungslink `/beitreten/:code` mit Merken des Codes bis nach der Anmeldung, Gruppen-Schritt im Onboarding). Migration `007_group_preview.sql` und `supabase/tests/003_groups.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird.
-- Nächster Schritt: 6 (Aufgaben-Engine). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
+- Schritt 5 live getestet (Beitritt per Code, Admin-Funktionen), funktioniert.
+- Schritt 6 (Aufgaben-Engine): Code fertig (Heute-Screen mit Countdown-Ring, Zeitband vor der Freigabe, Phasen offen/spät/vorbei/erledigt, Polling, Admin-Seite `/admin` mit "Aufgabe jetzt auslösen" und "Tag zurücksetzen"). Migration `008_admin_engine.sql` und `supabase/tests/004_engine.test.sql` müssen im SQL-Editor laufen. Admin-Rolle nur per SQL (siehe docs/EINRICHTUNG.md).
+- Nächster Schritt: 7 (Abgabe: Kamera, Upload, Punkte, Gruppenfeed). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
 
 ## Bewusste Abweichungen vom Konzept
 - `tasks` ist nur für Aufgaben bereits freigegebener Tage lesbar (nicht "alle aktiven"), sonst sähe man den ganzen Pool.

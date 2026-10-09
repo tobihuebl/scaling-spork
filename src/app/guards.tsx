@@ -33,3 +33,10 @@ export function PublicOnly() {
   if (session) return <Navigate to="/heute" replace />;
   return <Outlet />;
 }
+
+/** Nur für die Rolle admin (wird manuell per SQL vergeben); alle anderen gehen zu "Heute". */
+export function RequireAdmin() {
+  const { profile } = useProfile();
+  if (profile.role !== 'admin') return <Navigate to="/heute" replace />;
+  return <Outlet />;
+}

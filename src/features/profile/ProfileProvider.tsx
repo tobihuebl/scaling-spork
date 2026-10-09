@@ -12,11 +12,12 @@ export type Profile = {
   bio: string | null;
   gemeinde_id: string | null;
   onboarded_at: string | null;
+  role: 'user' | 'admin';
 };
 
 export type ProfilePatch = Partial<Pick<Profile, 'display_name' | 'avatar_key' | 'bio' | 'gemeinde_id' | 'onboarded_at'>>;
 
-const COLUMNS = 'id, username, display_name, avatar_key, bio, gemeinde_id, onboarded_at';
+const COLUMNS = 'id, username, display_name, avatar_key, bio, gemeinde_id, onboarded_at, role';
 
 type ProfileState = {
   profile: Profile;
