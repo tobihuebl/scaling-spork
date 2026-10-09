@@ -6,7 +6,10 @@ import { Login } from '../features/auth/Login';
 import { Register } from '../features/auth/Register';
 import { ResetPassword } from '../features/auth/ResetPassword';
 import { Legal } from '../features/legal/Legal';
+import { GroupDetail } from '../features/groups/GroupDetail';
 import { Groups } from '../features/groups/Groups';
+import { JoinByLink } from '../features/groups/JoinByLink';
+import { NewGroup } from '../features/groups/NewGroup';
 import { ProfilePage } from '../features/profile/ProfilePage';
 import { Ranking } from '../features/ranking/Ranking';
 import { Settings } from '../features/settings/Settings';
@@ -30,6 +33,7 @@ export function App() {
 
           <Route path="/passwort-neu" element={<ResetPassword />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/beitreten/:code" element={<JoinByLink />} />
 
           <Route path="/agb" element={<Legal titleKey="legal.terms" />} />
           <Route path="/datenschutz" element={<Legal titleKey="legal.privacy" />} />
@@ -40,6 +44,8 @@ export function App() {
             <Route element={<AppShell />}>
               <Route path="/heute" element={<Today />} />
               <Route path="/gruppen" element={<Groups />} />
+              <Route path="/gruppen/neu" element={<NewGroup />} />
+              <Route path="/gruppen/:id" element={<GroupDetail />} />
               <Route path="/rangliste" element={<Ranking />} />
               <Route path="/profil" element={<ProfilePage />} />
               <Route path="/einstellungen" element={<Settings />} />

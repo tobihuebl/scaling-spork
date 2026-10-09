@@ -103,7 +103,9 @@
     "installText": "So verpasst du die Aufgabe nicht. Auf dem iPhone kommen Benachrichtigungen nur, wenn die App auf dem Home-Bildschirm liegt.",
     "installIos": "iPhone: In Safari auf Teilen tippen, dann „Zum Home-Bildschirm“.",
     "installAndroid": "Android: Im Browser-Menü „App installieren“ oder „Zum Startbildschirm hinzufügen“ wählen.",
-    "done": "Fertig"
+    "done": "Fertig",
+    "groupText": "Gewertet wird in Gruppen. Tritt mit einem Code bei oder gründe eine eigene. Das geht auch später.",
+    "later": "Später"
   },
   "today": {
     "title": "Heute",
@@ -152,7 +154,71 @@
     }
   },
   "groups": {
-    "placeholder": "Hier erscheinen deine Gruppen."
+    "empty": "Du bist noch in keiner Gruppe.",
+    "createButton": "Gruppe erstellen",
+    "members": "{count} Mitglieder",
+    "membersOf": "{count} von {max} Mitgliedern",
+    "membersTitle": "Mitglieder",
+    "admin": "Admin",
+    "remove": "Entfernen",
+    "removeConfirm": "{name} aus der Gruppe entfernen?",
+    "leave": "Gruppe verlassen",
+    "leaveConfirm": "Möchtest du „{name}“ wirklich verlassen?",
+    "notFound": "Diese Gruppe gibt es nicht oder du bist kein Mitglied.",
+    "copied": "Kopiert.",
+    "shareText": "Komm in meine Gruppe „{name}“ bei {appName}.",
+    "types": {
+      "friends": "Freunde",
+      "organisation": "Organisation"
+    },
+    "create": {
+      "title": "Gruppe erstellen",
+      "name": "Name",
+      "description": "Beschreibung (optional)",
+      "type": "Art der Gruppe",
+      "submit": "Gruppe erstellen",
+      "typeHint": {
+        "friends": "Bis zu 30 Personen.",
+        "organisation": "Verein, Klasse oder Team, bis zu 300 Personen."
+      }
+    },
+    "join": {
+      "title": "Mit Code beitreten",
+      "code": "Einladungscode",
+      "submit": "Beitreten"
+    },
+    "invite": {
+      "title": "Einladen",
+      "codeLabel": "Einladungscode",
+      "qrAlt": "QR-Code zum Beitritt zur Gruppe {name}",
+      "share": "Link teilen",
+      "copyCode": "Code kopieren",
+      "renew": "Neuen Code erzeugen",
+      "renewConfirm": "Der alte Code und Link funktionieren dann nicht mehr. Fortfahren?",
+      "renewed": "Neuer Code erstellt."
+    },
+    "edit": {
+      "open": "Gruppe bearbeiten",
+      "title": "Gruppe bearbeiten"
+    },
+    "link": {
+      "title": "Einladung",
+      "needLogin": "Du wurdest in eine Gruppe eingeladen. Melde dich an oder registriere dich, dann geht es hier weiter.",
+      "join": "Beitreten"
+    },
+    "errors": {
+      "name": "Der Name braucht 3 bis 40 Zeichen.",
+      "description": "Die Beschreibung darf höchstens 200 Zeichen haben.",
+      "codeFormat": "Der Code hat 6 Zeichen aus Buchstaben und Ziffern.",
+      "invalid_code": "Diesen Code gibt es nicht.",
+      "group_full": "Diese Gruppe ist voll.",
+      "too_many_groups": "Du bist schon in 5 Gruppen. Verlass zuerst eine.",
+      "suspended": "Dein Konto ist eingeschränkt.",
+      "group_limit_today": "Du hast heute schon genug Gruppen erstellt. Versuch es morgen wieder.",
+      "invalid_name": "Der Name braucht 3 bis 40 Zeichen.",
+      "invalid_type": "Diese Gruppenart gibt es nicht.",
+      "forbidden": "Das darfst du nicht."
+    }
   },
   "ranking": {
     "placeholder": "Hier erscheint die Wertung."

@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Screen } from '../../components/Screen';
 import { t } from '../../i18n';
+import { clearPendingInvite, getPendingInvite } from '../../lib/pendingInvite';
+import { CreateGroupForm } from '../groups/CreateGroupForm';
+import { JoinForm } from '../groups/JoinForm';
 import { ProfileForm } from '../profile/ProfileForm';
 import { useProfile } from '../profile/ProfileProvider';
 
-// Schritte: Profil, Installationshinweis. Gruppe (Schritt 5) und Push (Schritt 9) kommen dazu.
-const STEPS = ['profile', 'install'] as const;
+// Schritte: Profil, Gruppe, Installationshinweis. Der Push-Schritt kommt in Schritt 9 dazu.
+const STEPS = ['profile', 'group', 'install'] as const;
 
 export function Welcome() {
   const { update } = useProfile();
@@ -33,6 +36,29 @@ export function Welcome() {
           <p>{t('welcome.profileText')}</p>
           <ProfileForm submitLabel={t('welcome.next')} showBio={false} onSaved={() => setStep(1)} />
         </>
+      )}
+
+      {STEPS[step] === 'group' && (
+        <section className="stack">
+          <p>{t('welcome.groupText')}</p>
+          <div className="card stack">
+            <h2>{t('groups.join.title')}</h2>
+            <JoinForm
+              initialCode={getPendingInvite() ?? ''}
+              onJoined={() => {
+                clearPendingInvite();
+                setStep(2);
+              }}
+            />
+          </div>
+          <div className="card stack">
+            <h2>{t('groups.create.title')}</h2>
+            <CreateGroupForm onCreated={() => setStep(2)} />
+          </div>
+          <button className="button button--ghost" type="button" onClick={() => setStep(2)}>
+            {t('welcome.later')}
+          </button>
+        </section>
       )}
 
       {STEPS[step] === 'install' && (

@@ -18,7 +18,9 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 - Schritt 3 (Zugang): Code fertig (Registrierung, Login, Passwort-Reset, Callback, Routenschutz, Platzhalter für Heute/Willkommen/Einstellungen/Rechtstexte). Migration `005_public_settings.sql` muss noch im Supabase-SQL-Editor laufen. Echter Registrierungs-/Mail-Durchlauf noch nicht getestet.
 - Schritt 3 live getestet (Registrierung, Mail-Bestätigung, Login, Logout, Passwort-Reset): funktioniert.
 - Schritt 4 (Profil/Onboarding): Code fertig, Migration `006_profile_onboarding.sql` (Spalte `onboarded_at`, Avatar-Constraint) und `supabase/tests/002_profile.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird. Avatar per Kamera-Foto folgt mit der Kamera-Komponente in Schritt 7; Gruppen-Schritt im Onboarding mit Schritt 5, Push-Schritt mit Schritt 9.
-- Nächster Schritt: 5 (Gruppen). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
+- Schritt 4 live getestet, funktioniert.
+- Schritt 5 (Gruppen): Code fertig (Liste, erstellen, Detail mit Code/QR/Mitgliedern, Admin-Funktionen, Einladungslink `/beitreten/:code` mit Merken des Codes bis nach der Anmeldung, Gruppen-Schritt im Onboarding). Migration `007_group_preview.sql` und `supabase/tests/003_groups.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird.
+- Nächster Schritt: 6 (Aufgaben-Engine). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
 
 ## Bewusste Abweichungen vom Konzept
 - `tasks` ist nur für Aufgaben bereits freigegebener Tage lesbar (nicht "alle aktiven"), sonst sähe man den ganzen Pool.
