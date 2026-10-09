@@ -197,6 +197,11 @@ declare
   id1 uuid;
   id2 uuid;
 begin
+  -- zuerst die Test-Abgaben entfernen, die auf den Test-Prompt zeigen
+  delete from public.submissions
+   where user_id in ('00000000-0000-0000-0000-00000000000a',
+                     '00000000-0000-0000-0000-00000000000b',
+                     '00000000-0000-0000-0000-00000000000c');
   delete from public.daily_prompts where prompt_date = public.vienna_today();
   id1 := public.schedule_daily_prompt();
   id2 := public.schedule_daily_prompt();
@@ -209,3 +214,6 @@ begin
 end $$;
 
 rollback;
+
+-- Wird nur erreicht, wenn kein ASSERT oben fehlgeschlagen ist (im SQL-Editor sichtbar als Ergebnis).
+select 'ALLE TESTS OK' as ergebnis;

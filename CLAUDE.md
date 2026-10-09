@@ -12,8 +12,10 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 
 ## Stand
 - Projekt liegt in `~/Projects/PhoneOff` (nicht mehr in pCloud, wegen `node_modules`).
-- Schritt 1 (Setup): läuft lokal (install, Tests, Typecheck, Build); noch nicht auf Cloudflare deployt.
-- Schritt 2 (Datenbank): `supabase/migrations/001`–`004`, Tests in `supabase/tests/`, **noch nicht gegen eine Datenbank gelaufen**.
+- Schritt 1 (Setup): fertig. Läuft lokal und live auf https://proud-member.verwaltung-533.workers.dev (Cloudflare, Auto-Deploy bei Push auf main, `wrangler.jsonc`).
+- Schritt 2 (Datenbank): fertig. Migrationen `001`–`004` im Supabase-Projekt (Frankfurt) eingespielt, `supabase/tests/001_rls.test.sql` im SQL-Editor bestanden ("ALLE TESTS OK").
+- Supabase-URL und Anon-Key in `.env.local` (git-ignoriert). In Cloudflare noch einzutragen: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
+- Nächster Schritt: 3 (Zugang). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
 
 ## Bewusste Abweichungen vom Konzept
 - `tasks` ist nur für Aufgaben bereits freigegebener Tage lesbar (nicht "alle aktiven"), sonst sähe man den ganzen Pool.

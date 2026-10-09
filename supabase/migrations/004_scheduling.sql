@@ -2,7 +2,7 @@
 -- dispatch-push, send-reminders und die Edge Functions folgen in Schritt 9.
 
 -- Wählt Aufgabe und zufällige Uhrzeit für heute (Europe/Vienna). Idempotent über prompt_date.
-create function public.schedule_daily_prompt() returns uuid
+create or replace function public.schedule_daily_prompt() returns uuid
 language plpgsql security definer set search_path = public as
 $$
 declare
@@ -45,7 +45,7 @@ end
 $$;
 
 -- Wochenbonus für die Vorwoche. Idempotent über den eindeutigen Index.
-create function public.award_weekly_bonus() returns int
+create or replace function public.award_weekly_bonus() returns int
 language plpgsql security definer set search_path = public as
 $$
 declare
