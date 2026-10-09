@@ -7,7 +7,8 @@
     "today": "Heute",
     "groups": "Gruppen",
     "ranking": "Wertung",
-    "profile": "Profil"
+    "profile": "Profil",
+    "label": "Hauptmenü"
   },
   "start": {
     "title": "Willkommen bei {appName}",
@@ -94,9 +95,15 @@
     }
   },
   "welcome": {
-    "title": "Dein Konto ist bestätigt.",
-    "text": "Schön, dass du dabei bist.",
-    "next": "Weiter"
+    "title": "Willkommen!",
+    "step": "Schritt {current} von {total}",
+    "profileText": "Such dir einen Avatar aus. Alles hier ist freiwillig und lässt sich später ändern.",
+    "next": "Weiter",
+    "installTitle": "Als App installieren",
+    "installText": "So verpasst du die Aufgabe nicht. Auf dem iPhone kommen Benachrichtigungen nur, wenn die App auf dem Home-Bildschirm liegt.",
+    "installIos": "iPhone: In Safari auf Teilen tippen, dann „Zum Home-Bildschirm“.",
+    "installAndroid": "Android: Im Browser-Menü „App installieren“ oder „Zum Startbildschirm hinzufügen“ wählen.",
+    "done": "Fertig"
   },
   "today": {
     "title": "Heute",
@@ -113,5 +120,41 @@
     "terms": "AGB",
     "privacy": "Datenschutzerklärung",
     "imprint": "Impressum"
+  },
+  "profile": {
+    "title": "Profil",
+    "save": "Speichern",
+    "saved": "Gespeichert.",
+    "avatar": "Avatar",
+    "displayName": "Anzeigename",
+    "displayNameHint": "Optional. Das sehen die Mitglieder deiner Gruppen.",
+    "bio": "Kurztext",
+    "gemeinde": "Gemeinde",
+    "gemeindeNone": "Keine Angabe",
+    "gemeindeHint": "Zählt nur als Summe im Gemeinde-Duell, nie mit deinem Namen.",
+    "errors": {
+      "displayName": "Der Anzeigename darf höchstens 30 Zeichen haben.",
+      "bio": "Der Kurztext darf höchstens 140 Zeichen haben."
+    },
+    "avatars": {
+      "sonne": "Sonne",
+      "mond": "Mond",
+      "blatt": "Blatt",
+      "berg": "Berg",
+      "welle": "Welle",
+      "flamme": "Flamme",
+      "stern": "Stern",
+      "wolke": "Wolke",
+      "baum": "Baum",
+      "vogel": "Vogel",
+      "blume": "Blume",
+      "tropfen": "Tropfen"
+    }
+  },
+  "groups": {
+    "placeholder": "Hier erscheinen deine Gruppen."
+  },
+  "ranking": {
+    "placeholder": "Hier erscheint die Wertung."
   }
 }

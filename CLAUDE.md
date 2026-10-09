@@ -16,7 +16,9 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 - Schritt 2 (Datenbank): fertig. Migrationen `001`–`004` im Supabase-Projekt (Frankfurt) eingespielt, `supabase/tests/001_rls.test.sql` im SQL-Editor bestanden ("ALLE TESTS OK").
 - Supabase-URL und Anon-Key in `.env.local` (git-ignoriert). In Cloudflare noch einzutragen: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
 - Schritt 3 (Zugang): Code fertig (Registrierung, Login, Passwort-Reset, Callback, Routenschutz, Platzhalter für Heute/Willkommen/Einstellungen/Rechtstexte). Migration `005_public_settings.sql` muss noch im Supabase-SQL-Editor laufen. Echter Registrierungs-/Mail-Durchlauf noch nicht getestet.
-- Nächster Schritt: 4 (Profil und Onboarding). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
+- Schritt 3 live getestet (Registrierung, Mail-Bestätigung, Login, Logout, Passwort-Reset): funktioniert.
+- Schritt 4 (Profil/Onboarding): Code fertig, Migration `006_profile_onboarding.sql` (Spalte `onboarded_at`, Avatar-Constraint) und `supabase/tests/002_profile.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird. Avatar per Kamera-Foto folgt mit der Kamera-Komponente in Schritt 7; Gruppen-Schritt im Onboarding mit Schritt 5, Push-Schritt mit Schritt 9.
+- Nächster Schritt: 5 (Gruppen). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
 
 ## Bewusste Abweichungen vom Konzept
 - `tasks` ist nur für Aufgaben bereits freigegebener Tage lesbar (nicht "alle aktiven"), sonst sähe man den ganzen Pool.
