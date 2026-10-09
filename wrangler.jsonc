@@ -1,0 +1,10 @@
+{
+  // Cloudflare liefert den Vite-Build (dist) als statische Seite aus.
+  // "name" muss dem Projektnamen in Cloudflare entsprechen.
+  "name": "proud-member",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
