@@ -91,7 +91,8 @@
       "credentials": "E-Mail oder Passwort stimmt nicht.",
       "notConfirmed": "Bitte bestätige zuerst deine E-Mail. Den Link haben wir dir geschickt.",
       "registerFailed": "Das hat nicht geklappt. Vielleicht ist der Benutzername schon vergeben.",
-      "rateLimit": "Gerade zu viele Versuche. Bitte warte kurz."
+      "rateLimit": "Gerade zu viele Versuche. Bitte warte kurz.",
+      "alreadyRegistered": "Mit dieser E-Mail gibt es schon ein Konto. Melde dich an oder setze dein Passwort zurück."
     }
   },
   "welcome": {

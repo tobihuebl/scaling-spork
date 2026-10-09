@@ -18,6 +18,11 @@ describe('authErrors', () => {
     );
   });
 
+  it('erkennt eine bereits registrierte E-Mail', () => {
+    expect(registerErrorKey({ code: 'user_already_exists', status: 422 })).toBe('auth.errors.alreadyRegistered');
+    expect(registerErrorKey({ message: 'User already registered' })).toBe('auth.errors.alreadyRegistered');
+  });
+
   it('erkennt zu viele Versuche und fehlendes Netz', () => {
     expect(registerErrorKey({ status: 429 })).toBe('auth.errors.rateLimit');
     expect(genericErrorKey({ code: 'over_email_send_rate_limit' })).toBe('auth.errors.rateLimit');
