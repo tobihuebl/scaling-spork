@@ -116,9 +116,7 @@
     "proof": "Beweis: {type}",
     "remaining": "übrig",
     "submit": "Jetzt abgeben",
-    "submitSoon": "Die Abgabe kommt als Nächstes.",
     "late": "Das Zeitfenster ist vorbei. Bis Mitternacht kannst du noch abgeben, mit weniger Punkten.",
-    "done": "Erledigt. Danke!",
     "over": "Heute ist vorbei. Bis morgen.",
     "toGroups": "Zu den Gruppen"
   },
@@ -261,5 +259,63 @@
     "resetConfirm": "Neue Aufgabe und neue Uhrzeit für heute wählen?",
     "resetDone": "Der Tag wurde zurückgesetzt.",
     "hasSubmissions": "Zurücksetzen geht nicht, es gibt schon Abgaben."
+  },
+  "submit": {
+    "photo": "Foto",
+    "previewAlt": "Vorschau deines Fotos",
+    "again": "Nochmal",
+    "text": "Text",
+    "counter": "{count} von {max} Zeichen",
+    "send": "Abgeben",
+    "imageFailed": "Das Bild konnte nicht geladen werden.",
+    "camera": {
+      "starting": "Kamera startet …",
+      "shoot": "Foto aufnehmen",
+      "preview": "Kamera-Vorschau",
+      "failed": "Das Foto konnte nicht verarbeitet werden. Bitte versuch es nochmal.",
+      "unavailable": "Die Kamera ist nicht verfügbar. Erlaube den Kamera-Zugriff im Browser oder nimm das Foto direkt auf.",
+      "fallback": "Foto mit der Kamera aufnehmen"
+    },
+    "visibility": {
+      "title": "Wer darf es sehen?",
+      "groups": "Meine Gruppen",
+      "groupsHint": "Mitglieder deiner Gruppen sehen den Beitrag, wenn sie selbst abgegeben haben.",
+      "private": "Nur ich",
+      "privateHint": "Nur die Punkte zählen, das Bild sieht niemand sonst."
+    },
+    "errors": {
+      "textLong": "Der Text darf höchstens 280 Zeichen haben.",
+      "imageRequired": "Bitte nimm ein Foto auf.",
+      "textRequired": "Bitte schreib ein paar Worte.",
+      "already": "Du hast heute schon abgegeben.",
+      "not_released": "Die Aufgabe ist noch nicht freigegeben.",
+      "day_over": "Der Tag ist schon vorbei.",
+      "image_required": "Bitte nimm ein Foto auf.",
+      "text_required": "Bitte schreib ein paar Worte.",
+      "invalid_image_path": "Das Foto konnte nicht gespeichert werden.",
+      "prompt_not_found": "Die Aufgabe wurde nicht gefunden."
+    }
+  },
+  "feed": {
+    "yours": "Deine Abgabe",
+    "points": "+{points} Punkte",
+    "late": "verspätet",
+    "deleted": "Du hast diesen Beitrag gelöscht. Die Punkte bleiben.",
+    "hidden": "Dein Beitrag wird gerade geprüft.",
+    "removed": "Dein Beitrag wurde entfernt.",
+    "private": "Nur du siehst diesen Beitrag.",
+    "reactionsYours": "Reaktionen auf deinen Beitrag",
+    "delete": "Beitrag löschen",
+    "deleteConfirm": "Beitrag löschen? Die Punkte bleiben.",
+    "noGroups": "Du bist in keiner Gruppe. Tritt einer bei, um die Beiträge anderer zu sehen.",
+    "nobody": "Von den anderen hat noch niemand abgegeben.",
+    "end": "Mehr gibt es heute nicht. Bis morgen.",
+    "react": "Reagieren",
+    "reactions": {
+      "clap": "Applaus",
+      "muscle": "Stark",
+      "laugh": "Lachen",
+      "heart": "Herz"
+    }
   }
 }

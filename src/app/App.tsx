@@ -14,7 +14,7 @@ import { NewGroup } from '../features/groups/NewGroup';
 import { ProfilePage } from '../features/profile/ProfilePage';
 import { Ranking } from '../features/ranking/Ranking';
 import { Settings } from '../features/settings/Settings';
-import { Submit } from '../features/today/Submit';
+import { Submit } from '../features/submit/Submit';
 import { Today } from '../features/today/Today';
 import { Welcome } from '../features/today/Welcome';
 import { PublicOnly, RequireAdmin, RequireAuth } from './guards';

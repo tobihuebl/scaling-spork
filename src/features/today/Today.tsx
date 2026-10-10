@@ -4,6 +4,7 @@ import { Loading, Screen } from '../../components/Screen';
 import { t } from '../../i18n';
 import { formatCountdown, serverOffsetMs } from '../../lib/time';
 import { useLoad } from '../../lib/useLoad';
+import { TodayFeed } from '../submit/TodayFeed';
 import { CountdownRing } from './CountdownRing';
 import { fetchToday } from './todayApi';
 import { formatBandHour, phaseOf, remainingFraction, type TodayReleased } from './todayState';
@@ -104,15 +105,7 @@ function Released({ today, nowMs }: { today: TodayReleased; nowMs: number }) {
         </div>
       )}
 
-      {phase === 'done' && (
-        <div className="stack">
-          <p>
-            <strong>{t('today.done')}</strong>
-          </p>
-          <p className="muted">{t('common.tomorrow')}</p>
-          <Link to="/gruppen">{t('today.toGroups')}</Link>
-        </div>
-      )}
+      {phase === 'done' && <TodayFeed today={today} />}
 
       {phase === 'over' && <p className="muted">{t('today.over')}</p>}
     </Screen>

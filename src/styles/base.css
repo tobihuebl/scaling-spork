@@ -355,3 +355,59 @@ h2 {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
+
+.camera {
+  width: 100%;
+  border-radius: var(--radius-card);
+  background: #000;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.proof-image {
+  display: block;
+  width: 100%;
+  max-height: 70dvh;
+  object-fit: contain;
+  border-radius: var(--radius-button);
+  background: var(--color-border);
+}
+
+.proof-image--loading {
+  aspect-ratio: 4 / 3;
+}
+
+.textarea {
+  min-height: 96px;
+  padding: var(--space-3);
+  resize: vertical;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.reactions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.reaction {
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background: var(--color-surface);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.reaction[aria-pressed='true'] {
+  border-color: var(--color-accent);
+  background: #e6f1ea;
+}

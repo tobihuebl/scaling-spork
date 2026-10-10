@@ -22,7 +22,9 @@ Konzept und Bauplan: `docs/KONZEPT.md`. Einrichtung der Konten: `docs/EINRICHTUN
 - Schritt 5 (Gruppen): Code fertig (Liste, erstellen, Detail mit Code/QR/Mitgliedern, Admin-Funktionen, Einladungslink `/beitreten/:code` mit Merken des Codes bis nach der Anmeldung, Gruppen-Schritt im Onboarding). Migration `007_group_preview.sql` und `supabase/tests/003_groups.test.sql` müssen im SQL-Editor laufen, bevor gepusht wird.
 - Schritt 5 live getestet (Beitritt per Code, Admin-Funktionen), funktioniert.
 - Schritt 6 (Aufgaben-Engine): Code fertig (Heute-Screen mit Countdown-Ring, Zeitband vor der Freigabe, Phasen offen/spät/vorbei/erledigt, Polling, Admin-Seite `/admin` mit "Aufgabe jetzt auslösen" und "Tag zurücksetzen"). Migration `008_admin_engine.sql` und `supabase/tests/004_engine.test.sql` müssen im SQL-Editor laufen. Admin-Rolle nur per SQL (siehe docs/EINRICHTUNG.md).
-- Nächster Schritt: 7 (Abgabe: Kamera, Upload, Punkte, Gruppenfeed). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
+- Schritt 6 live getestet; Zeitplan (pg_cron) hat über Nacht eine Aufgabe angelegt.
+- Schritt 7 (Abgabe): Code fertig (Live-Kamera mit Datei-Fallback, Verkleinerung auf 1600 px und JPEG ohne EXIF, Upload in `proofs/{user_id}/{id}.jpg`, Text/Foto/Foto+Text je nach Aufgabe, Sichtbarkeit Gruppen/privat, Punkte, Feed je Gruppe nach eigener Abgabe, eigene Abgabe mit Löschen, Reaktionen). Keine neue Migration. `supabase/tests/005_submissions.test.sql` noch im SQL-Editor laufen lassen. Offen: Avatar per Kamera-Foto, Melden (Schritt 10).
+- Nächster Schritt: 8 (Wertung). Offen: App-Name, Pilot-Gemeinden, Gruppenvergleich, Resend plus Domain für E-Mails.
 
 ## Bewusste Abweichungen vom Konzept
 - `tasks` ist nur für Aufgaben bereits freigegebener Tage lesbar (nicht "alle aktiven"), sonst sähe man den ganzen Pool.
